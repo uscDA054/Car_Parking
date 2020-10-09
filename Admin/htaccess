@@ -1,0 +1,38 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^Home?$  index.php?file=home
+RewriteRule ^Login?$  index.php?file=login
+RewriteRule ^Logout?$  index.php?file=logout
+
+RewriteRule ^User?$  index.php?file=user
+RewriteRule ^User/Delete/([^/]+)$ index.php?file=user&user_delete=$1 [QSA,NC,L]
+
+
+RewriteRule ^Floor?$  index.php?file=floor
+RewriteRule ^Floor/Delete/([^/]+)$ index.php?file=floor&floor_delete=$1 [QSA,NC,L]
+RewriteRule ^Floor/Edit/([^/]+)$ index.php?file=floor_edit&floor_edit=$1 [QSA,NC,L]
+
+RewriteRule ^Rate?$  index.php?file=rate
+RewriteRule ^Rate/Delete/([^/]+)$ index.php?file=rate&rate_delete=$1 [QSA,NC,L]
+RewriteRule ^Rate/Edit/([^/]+)$ index.php?file=rate_edit&rate_edit=$1 [QSA,NC,L]
+
+
+RewriteRule ^Booking?$  index.php?file=booking
+RewriteRule ^Booking/Delete/([^/]+)$ index.php?file=booking&booking_delete=$1 [QSA,NC,L]
+RewriteRule ^Booking/Id/([^/]+)/Status/([^/]+)$ index.php?file=booking&booking_id=$1&booking_status=$2 [QSA,NC,L]
+
+RewriteRule ^Daily/Transactions?$  index.php?file=dailytransactions
+
+
+RewriteRule ^Error?$  index.php?file=404
+ErrorDocument 404 http://localhost:8080/Car_Parking/Admin/Error
+
+
+
+
+
+
